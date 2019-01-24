@@ -1,0 +1,21 @@
+.svg-preview {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  width: 100%;
+}
+
+.dialog-footer {
+  display: flex;
+}
+
+.dialog-footer button {
+  text-transform: uppercase;
+  min-width: 90px;
+}

@@ -1,0 +1,27 @@
+.add-btn {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.custom-icons {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 105px);
+  justify-content: center;
+  margin: 20px 0;
+}
+
+app-custom-icon {
+  cursor: pointer;
+}
+
+@media(min-width: 776px) {
+  .custom-icons {
+    grid-template-columns: repeat(5, 105px);
+  }
+}

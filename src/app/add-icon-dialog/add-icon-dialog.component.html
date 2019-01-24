@@ -1,0 +1,32 @@
+<!-- <h1>Add an Icon</h1> -->
+<div class="svg-preview">
+  <div #previewSvg></div>
+  <span>{{iconName}}</span>
+</div>
+
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input required [(ngModel)]="iconName" name="iconName" #name="ngModel" matInput placeholder="Icon Name">
+    <mat-error *ngIf="name.invalid">
+      Enter an icon name
+    </mat-error>
+  </mat-form-field>
+  <mat-error *ngIf="valueIsBlank(iconName) && wasSubmitted">
+    Icon name can't be blank
+  </mat-error>
+  <mat-form-field>
+      <input [(ngModel)]="iconTags" name="iconTags" matInput placeholder="Tags (separate with comma)">
+    </mat-form-field>
+  <mat-form-field>
+    <textarea (input)="onIconDataChange()" [(ngModel)]="iconData" #data="ngModel" name="iconData" matInput placeholder="SVG Data"></textarea>
+  </mat-form-field>
+  <mat-error *ngIf="isSVG === false">
+    Invalid format.
+  </mat-error>
+  <div class="dialog-footer">
+      <button type="submit" mat-button color="accent">Add</button>
+      <button (click)="dialogRef.close()" type="submit" mat-button>Cancel</button>
+  </div>
+</form>
+  
+  
