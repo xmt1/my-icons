@@ -3,6 +3,7 @@ import { IconService } from './icon.service';
 import { Icon } from './models/icon';
 import { AddIconDialogComponent } from './add-icon-dialog/add-icon-dialog.component';
 import { MatDialog } from '@angular/material';
+import { IconDetailDialogComponent } from './icon-detail-dialog/icon-detail-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -17,13 +18,24 @@ export class AppComponent implements OnInit {
     this.icons = this.iconService.getIcons();
   }
 
-  openDialog(): void {
+  openAddIconDialog(): void {
     const dialogRef = this.dialog.open(AddIconDialogComponent, {
       width: '450px'
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
+    // });
+  }
+
+  openIconDetailDialog(icon: Icon): void {
+    const dialogRef = this.dialog.open(IconDetailDialogComponent, {
+      width: '450px',
+      data: icon
     });
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
+    // });
   }
 }

@@ -10,16 +10,19 @@ import {
   MatButtonModule,
   MatDialogModule, 
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatChipsModule
 } from '@angular/material';
 import { CustomIconComponent } from './custom-icon/custom-icon.component';
 import { AddIconDialogComponent } from './add-icon-dialog/add-icon-dialog.component';
+import { IconDetailDialogComponent } from './icon-detail-dialog/icon-detail-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomIconComponent,
-    AddIconDialogComponent
+    AddIconDialogComponent,
+    IconDetailDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +33,12 @@ import { AddIconDialogComponent } from './add-icon-dialog/add-icon-dialog.compon
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatChipsModule
   ],
   entryComponents: [
-    AddIconDialogComponent
+    AddIconDialogComponent,
+    IconDetailDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

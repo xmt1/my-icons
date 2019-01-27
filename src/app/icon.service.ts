@@ -24,4 +24,9 @@ export class IconService {
     console.log(MY_ICONS);
   }
 
+  editIcon(oldIcon: Icon, newIcon: Icon) {
+    const index = MY_ICONS.indexOf(oldIcon);
+    MY_ICONS[index] = newIcon;
+  }
+
 }

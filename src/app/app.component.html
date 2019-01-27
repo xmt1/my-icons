@@ -4,7 +4,7 @@
       <mat-toolbar-row>
         <span>My Icons App</span>
         <span class="spacer"></span>
-        <button (click)="openDialog()" mat-raised-button color="accent" class="add-btn">
+        <button (click)="openAddIconDialog()" mat-raised-button color="accent" class="add-btn">
           <span>Add Icon</span>
           <mat-icon class="example-icon">add</mat-icon>
         </button>
@@ -16,6 +16,12 @@
 
 <main class="container">
   <div class="custom-icons">
-    <app-custom-icon attr.aria-label="{{icon.name}} icon" tabindex="0" role="button" *ngFor="let icon of icons" [icon]="icon"></app-custom-icon>
+    <app-custom-icon 
+      attr.aria-label="{{icon.name}} icon" 
+      tabindex="0" 
+      role="button" 
+      *ngFor="let icon of icons"
+      (click)="openIconDetailDialog(icon)" 
+      [icon]="icon"></app-custom-icon>
   </div>
 </main>
